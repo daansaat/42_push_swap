@@ -2,7 +2,8 @@ NAME = push_swap
 SRCS = \
 	push_swap.c \
 	quick_sort.c \
-	actions.c
+	actions.c \
+	utils.c
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Werror -Wextra
 INC = -I . -I ./libft
