@@ -17,4 +17,9 @@ struct node_ptr
 
 void	quick_sort(struct node_ptr *ptr, int lb, int ub);
 
+void	sab(struct node *stack);
+void	pab(struct node *stack_a, struct node *stack_b);
+// void	rab(struct node *stack);
+// void	rrab(struct node *stack);
+
 #endif
