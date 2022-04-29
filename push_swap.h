@@ -26,7 +26,7 @@ struct node_ptr
 void	quick_sort(struct node_ptr *ptr, int lb, int ub);
 
 void	sab(struct node *stack);
-void	pab(struct node **head_to, struct node **head_from);
+void	pab(struct node_ptr *ptr);
 // void	rab(struct node *stack);
 // void	rrab(struct node *stack);
 
