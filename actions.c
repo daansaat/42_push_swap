@@ -21,6 +21,7 @@ void	pab(struct node **head_to, struct node **head_from)
 	temp = *head_to;
 	*head_to = *head_from;
 	*head_from = (*head_from)->next;
+	(*head_from)->prev = NULL;
 	(*head_to)->next = temp;
 }
 
