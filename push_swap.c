@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	//sab(head_a);
 	//quick_sort(ptr, 0, argc - 2);
 	//pab(&head_a, &head_b);
-	rrab(&head_b);
+	//rrab(&head_b);
 	temp = head_a;
 	while (temp)
 	{
