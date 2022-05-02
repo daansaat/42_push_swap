@@ -13,22 +13,14 @@ struct node_ptr
 	struct node	*head;
 	struct node	*start;
 	struct node	*end;
-	struct node	*stack_a;
-	struct node	*stack_b;
 };
-
-// struct stacks
-// {
-// 	struct node	*stack_a;
-// 	struct node	*stack_b;
-// };
 
 void	quick_sort(struct node_ptr *ptr, int lb, int ub);
 
-void	sab(struct node *stack);
-void	pab(struct node_ptr *ptr);
-// void	rab(struct node *stack);
-// void	rrab(struct node *stack);
+void	sab(struct node *head);
+void	pab(struct node **head_to, struct node **head_from);
+void	rab(struct node **head);
+void	rrab(struct node **head);
 
 //void	add_front(struct node **head_to, struct node **head_from);
 

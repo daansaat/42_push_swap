@@ -35,33 +35,31 @@ static struct node	*create_dll(struct node *head, char **argv)
 
 int	main(int argc, char **argv)
 {
-	// struct node		*stack_a;
-	// struct node		*stack_b;
-	//struct stacks	*stacks;
+	struct node		*head_a;
+	struct node		*head_b;
 	struct node_ptr	*ptr;
 	struct node		*temp;
 
-	(void)argc;
-	ptr = NULL;
+	(void) argc;
 	ptr = malloc(sizeof(struct node_ptr));
-	ptr->stack_a = NULL;
-	ptr->stack_b = NULL;
-	ptr->stack_a = create_dll(ptr->stack_a, argv);
-	//stack_b = create_dll(stack_b, argv);
-	ptr->head = ptr->stack_a;
+	head_a = NULL;
+	head_b = NULL;
+	head_a = create_dll(head_a, argv);
+	ptr->head = head_a;
 	ptr->start = NULL;
 	ptr->end= NULL;
+	//sab(head_a);
 	//quick_sort(ptr, 0, argc - 2);
-	//pab(&stack_b, &stack_a);
-	pab(ptr);
-	temp = ptr->stack_a;
+	//pab(&head_a, &head_b);
+	rrab(&head_b);
+	temp = head_a;
 	while (temp)
 	{
 		printf("%d ", temp->nb);
 		temp = temp->next;
 	}
 	printf("\n");
-	temp = ptr->stack_b;
+	temp = head_b;
 	while (temp)
 	{
 		printf("%d ", temp->nb);
