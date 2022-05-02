@@ -37,21 +37,16 @@ int	main(int argc, char **argv)
 {
 	struct node		*head_a;
 	struct node		*head_b;
-	struct node_ptr	*ptr;
 	struct node		*temp;
-
+	
 	(void) argc;
-	ptr = malloc(sizeof(struct node_ptr));
 	head_a = NULL;
 	head_b = NULL;
 	head_a = create_dll(head_a, argv);
-	ptr->head = head_a;
-	ptr->start = NULL;
-	ptr->end= NULL;
-	//sab(head_a);
-	//quick_sort(ptr, 0, argc - 2);
-	//pab(&head_a, &head_b);
-	//rrab(&head_b);
+	insert_back_sort(&head_a, &head_b);
+	//insert_back_sort(&head_b, &head_a);
+	//insert_back_sort(&head_a, &head_b);
+	//insert_back_sort(&head_a, &head_b);
 	temp = head_a;
 	while (temp)
 	{

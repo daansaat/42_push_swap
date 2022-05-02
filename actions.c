@@ -12,7 +12,7 @@ void	sab(struct node *head)
 	head->next->nb = temp;
 }
 
-void	pab(struct node **head_to, struct node **head_from)
+void	pab(struct node **head_from, struct node **head_to)
 {
 	struct node	*temp;
 
@@ -23,6 +23,7 @@ void	pab(struct node **head_to, struct node **head_from)
 	*head_from = (*head_from)->next;
 	(*head_from)->prev = NULL;
 	(*head_to)->next = temp;
+	//(*head_to)->prev = NULL;
 }
 
 void	rab(struct node **head)

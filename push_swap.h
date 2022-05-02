@@ -8,22 +8,29 @@ struct node
 	struct node *prev;
 };
 
-struct node_ptr
-{
-	struct node	*head;
-	struct node	*start;
-	struct node	*end;
-};
+// struct data
+// {
+// 	struct node	*biggest;
+// }
 
-void	quick_sort(struct node_ptr *ptr, int lb, int ub);
+// struct node_ptr
+// {
+// 	struct node	*head;
+// 	struct node	*start;
+// 	struct node	*end;
+// };
+
+//void	quick_sort(struct node_ptr *ptr, int lb, int ub);
 
 void	sab(struct node *head);
-void	pab(struct node **head_to, struct node **head_from);
+void	pab(struct node **head_from, struct node **head_to);
 void	rab(struct node **head);
 void	rrab(struct node **head);
-void	ss(struct node *head_a, struct node *head_b)
-void	rr(struct node **head_a, struct node **head_b)
-void	rrr(struct node **head_a, struct node **head_b)
+void	ss(struct node *head_a, struct node *head_b);
+void	rr(struct node **head_a, struct node **head_b);
+void	rrr(struct node **head_a, struct node **head_b);
+
+void	insert_back_sort(struct node **head_from, struct node **head_to);
 
 //void	add_front(struct node **head_to, struct node **head_from);
 

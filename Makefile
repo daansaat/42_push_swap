@@ -3,7 +3,9 @@ SRCS = \
 	push_swap.c \
 	quick_sort.c \
 	actions.c \
-	utils.c
+	utils.c \
+	sort.c \
+	partition.c
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Werror -Wextra
 INC = -I . -I ./libft
