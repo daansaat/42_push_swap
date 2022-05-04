@@ -61,6 +61,7 @@ void	rrab(struct node **head)
 	temp = *head;
 	while (temp->next)
 		temp = temp->next;
+	(*head)->prev = temp;
 	temp->next = *head;
 	*head = temp;
 	temp = temp->prev;
