@@ -36,20 +36,27 @@ void	pab(struct node **head_from, struct node **head_to)
 
 void	rab(struct node **head)
 {
-	struct node	*tail;
 	struct node	*temp;
 
 	// if (!*head || !(*head)->next)
 	// 	return ;
-	tail = *head;
-	*head = (*head)->next;
-	(*head)->prev = NULL;
 	temp = *head;
 	while (temp->next)
 		temp = temp->next;
-	temp->next = tail;
-	tail->prev = temp;
-	tail->next = NULL;
+	temp->next = *head;
+	(*head)->prev = temp;
+	*head = (*head)->next;
+	(*head)->prev = NULL;
+	temp->next->next = NULL;
+	// tail = *head;
+	// *head = (*head)->next;
+	// (*head)->prev = NULL;
+	// temp = *head;
+	// while (temp->next)
+	// 	temp = temp->next;
+	// temp->next = tail;
+	// tail->prev = temp;
+	// tail->next = NULL;
 }
 
 void	rrab(struct node **head)
