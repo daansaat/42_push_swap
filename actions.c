@@ -71,7 +71,8 @@ void	rrab(struct node **head)
 	(*head)->prev = temp;
 	temp->next = *head;
 	*head = temp;
-	temp = temp->prev;
-	temp->next = NULL;
+	temp->prev->next = NULL;
+	// temp = temp->prev;
+	// temp->next = NULL;
 	(*head)->prev = NULL;
 }
