@@ -43,10 +43,13 @@ int	main(int argc, char **argv)
 	head_a = NULL;
 	head_b = NULL;
 	head_a = create_dll(head_a, argv);
-	insert_back_sort(&head_a, &head_b);
+	while (head_a)
+		insert_back_sort(&head_a, &head_b);
 	//insert_back_sort(&head_b, &head_a);
-	//insert_back_sort(&head_a, &head_b);
-	//insert_back_sort(&head_a, &head_b);
+	// insert_back_sort(&head_a, &head_b);
+	// insert_back_sort(&head_a, &head_b);
+	// insert_back_sort(&head_a, &head_b);
+	// insert_back_sort(&head_a, &head_b);
 	temp = head_a;
 	while (temp)
 	{
@@ -60,5 +63,6 @@ int	main(int argc, char **argv)
 		printf("%d ", temp->nb);
 		temp = temp->next;
 	}
+	printf("\n");
 	return (0);
 }

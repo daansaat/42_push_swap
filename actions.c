@@ -20,9 +20,15 @@ void	pab(struct node **head_from, struct node **head_to)
 		return ;
 	temp = *head_to;
 	*head_to = *head_from;
-	*head_from = (*head_from)->next;
-	(*head_from)->prev = NULL;
+	if ((*head_from)->next)
+	{
+		*head_from = (*head_from)->next;
+		(*head_from)->prev = NULL;
+	}
+	else
+		*head_from = (*head_from)->next;
 	(*head_to)->next = temp;
+	//temp->prev = NULL;
 	//(*head_to)->prev = NULL;
 }
 
