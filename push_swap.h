@@ -30,7 +30,7 @@ void	ss(struct node *head_a, struct node *head_b);
 void	rr(struct node **head_a, struct node **head_b);
 void	rrr(struct node **head_a, struct node **head_b);
 
-void	insert_back_sort(struct node **head_from, struct node **head_to);
+void	insert_sort_back(struct node **head_from, struct node **head_to);
 
 //void	add_front(struct node **head_to, struct node **head_from);
 

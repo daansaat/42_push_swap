@@ -28,6 +28,8 @@ void	pab(struct node **head_from, struct node **head_to)
 	else
 		*head_from = (*head_from)->next;
 	(*head_to)->next = temp;
+	if (temp)
+		temp->prev = *head_to;
 	//temp->prev = NULL;
 	//(*head_to)->prev = NULL;
 }
