@@ -8,6 +8,16 @@ struct node
 	struct node *prev;
 };
 
+struct var
+{
+	struct node	*max;
+	struct node	*min;
+	int			max_next;
+	int			max_prev;
+	int			min_next;
+	int			min_prev;
+};
+
 // struct data
 // {
 // 	struct node	*biggest;
