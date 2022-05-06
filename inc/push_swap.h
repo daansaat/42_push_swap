@@ -35,7 +35,7 @@ void	get_steps(struct node *node, struct steps *steps);
 void	smart_rotate(struct node **head, struct var *var);
 void	smart_rotate_saved_min(struct node **head, struct var *var);
 
-void	check(void *ptr);
+void	check_malloc(void *ptr);
 //
 void	print_list(struct node *head_a, struct node *head_b);
 //

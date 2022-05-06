@@ -3,10 +3,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	check(void *ptr)
+void	check_malloc(void *ptr)
 {
 	if (ptr == NULL)
 		exit(EXIT_FAILURE);
+}
+
+void	check_is_integer(int nb)
+{
+	if (nb > 2147483647 || nb < -2147483648 || !nb)
+	{
+		write(1, "ERROR\n", 6);
+		exit(EXIT_FAILURE);
+	}
 }
 
 static void	create_dll(struct node **head, char **argv)
@@ -18,11 +27,11 @@ static void	create_dll(struct node **head, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		check(newnode = malloc(sizeof(struct node)));
+		check_malloc(newnode = malloc(sizeof(struct node)));
 		if (*head == 0)
 		{
 			*head = temp = newnode;
-			newnode->nb = ft_atoi(argv[i]);
+			newnode->nb = ft_atoi(argv[i]));
 			newnode->prev = NULL;
 		}
 		else
@@ -47,7 +56,7 @@ int	main(int argc, char **argv)
 	head_a = NULL;
 	head_b = NULL;
 	create_dll(&head_a, argv);
-	check(var = malloc(sizeof(struct var)));
+	check_malloc(var = malloc(sizeof(struct var)));
 	big_sort(argc, argv, &head_a, &head_b, var);
 	print_list(head_a, head_b);
 	return (0);
