@@ -2,20 +2,17 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static void	insert_sort_back(struct node **head_from, struct node **head_to, struct var *var)
+static void	insert_sort_back(struct node **head_b, struct node **head_a, struct var *var)
 {
-	struct node	*temp;
-
-	get_min_max_num(head_from, var);
+	get_min_max_num(head_b, var);
 	if (!var->saved_min)
 		var->saved_min = var->min;
 	get_steps(var->min, &var->steps_min);
 	get_steps(var->max, &var->steps_max);
-	smart_rotate(head_from, var);	
-	temp = *head_from;
-	pab(head_from, head_to);
-	if (temp == var->min && temp != var->max)
-		rab(head_to);
+	smart_rotate(head_b, var);	
+	pab(head_b, head_a);
+	if (*head_a == var->min && *head_a != var->max)
+		rab(head_a);
 }
 
 static int	select_next_partition_member(int ub, int lb, struct node **head_a, struct var *var)
