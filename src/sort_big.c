@@ -86,7 +86,7 @@ void	big_sort(int argc, char **argv, struct node **head_a, struct node **head_b,
 		if (var->saved_min)
 		{
 			get_steps(var->saved_min, &var->steps_min);
-			smart_rotate_min(head_a, var);
+			smart_rotate_saved_min(head_a, var);
 		}
 		var->saved_min = NULL;
 		while (*head_b)

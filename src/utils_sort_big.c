@@ -79,7 +79,7 @@ void	smart_rotate(struct node **head, struct var *var)
 			rab(head);
 }
 
-void	smart_rotate_min(struct node **head, struct var *var)
+void	smart_rotate_saved_min(struct node **head, struct var *var)
 {
 	while (*head != var->saved_min)
 	{

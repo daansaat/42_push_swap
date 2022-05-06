@@ -33,7 +33,7 @@ void	get_min_max_num(struct node **head, struct var *var);
 void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var *var);
 void	get_steps(struct node *node, struct steps *steps);
 void	smart_rotate(struct node **head, struct var *var);
-void	smart_rotate_min(struct node **head, struct var *var);
+void	smart_rotate_saved_min(struct node **head, struct var *var);
 
 void	check(void *ptr);
 //
