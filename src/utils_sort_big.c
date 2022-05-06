@@ -1,20 +1,5 @@
 #include "push_swap.h"
 
-void	get_min_max_num(struct node **head, struct var *var)
-{
-	struct node	*temp;
-
-	var->max = var->min = temp = *head;
-	while (temp->next)
-	{
-		temp = temp->next;
-		if (temp->nb > var->max->nb)
-			var->max = temp;
-		if (temp->nb < var->min->nb)
-			var->min = temp;
-	}
-}
-
 void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var *var)
 {
 	struct node	*temp;
@@ -37,6 +22,21 @@ void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var 
 		if (!var->min)
 			if (temp->nb < ub && temp->nb >= lb)
 				var->min = temp;
+	}
+}
+
+void	get_min_max_num(struct node **head, struct var *var)
+{
+	struct node	*temp;
+
+	var->max = var->min = temp = *head;
+	while (temp->next)
+	{
+		temp = temp->next;
+		if (temp->nb > var->max->nb)
+			var->max = temp;
+		if (temp->nb < var->min->nb)
+			var->min = temp;
 	}
 }
 
