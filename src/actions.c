@@ -1,16 +1,5 @@
 #include "push_swap.h"
-#include <stdio.h>
-
-void	sab(struct node *head)
-{
-	int	temp;
-
-	if (!head || !head->next)
-		return ;
-	temp = head->nb;
-	head->nb = head->next->nb;
-	head->next->nb = temp;
-}
+#include "stdlib.h"
 
 void	pab(struct node **head_from, struct node **head_to)
 {

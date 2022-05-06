@@ -1,14 +1,17 @@
 NAME = push_swap
-SRCS = \
-	push_swap.c \
-	quick_sort.c \
+SRCS_DIR = src/
+SRCS_LIST = \
 	actions.c \
-	utils.c \
-	sort.c \
-	partition.c
+	push_swap.c \
+	sort_3.c \
+	sort_5.c \
+	sort_big.c \
+	utils_sort_big.c \
+	print_list.c
+SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Werror -Wextra
-INC = -I . -I ./libft
+INC = -I ./inc -I ./libft
 LIB = -L ./libft -l ft
 
 all: $(NAME)
