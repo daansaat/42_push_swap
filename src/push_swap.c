@@ -1,7 +1,7 @@
 #include "push_swap.h"
 #include "libft.h"
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 static void	check_malloc(void *ptr)
 {

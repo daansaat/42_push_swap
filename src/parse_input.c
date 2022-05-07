@@ -2,7 +2,7 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
+
 static void error_exit(void)
 {
     write(1, "Error\n", 6);
