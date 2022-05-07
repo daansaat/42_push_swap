@@ -2,6 +2,12 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdio.h>
+static void error_exit(void)
+{
+    write(1, "Error\n", 6);
+    exit(EXIT_FAILURE);
+}
 
 void    check_is_number(char **argv)
 {
@@ -17,10 +23,7 @@ void    check_is_number(char **argv)
         while (argv[i][j])
         {
             if (argv[i][j] < '0' || argv[i][j] > '9')
-            {
-                write(1, "Error\n", 6);
-                exit(EXIT_FAILURE);
-            }
+                error_exit();
             j++;
         }
         j = 0;
@@ -41,10 +44,7 @@ void    check_is_double(struct node *head)
         {
             head = head->next;
             if (nb == head->nb)
-            {
-                write(1, "Error\n", 6);
-                exit(EXIT_FAILURE);
-            }
+                error_exit();
         }
         temp = temp->next;
         head = temp;
@@ -59,18 +59,14 @@ void    check_is_integer(char *nb)
 
     nbr = ft_atoi(nb);
     len = ft_strlen(nb) - 1;
-	if (nbr == -2147483648 && nb[0] == '-')
-		return ;
-	if (nbr < 0)
-		nbr *= -1;
 	while (len >= 0)
 	{
-		digit = nbr % 10 + '0';
+		digit = nbr % 10;
+        if (digit < 0 && nb[0] == '-')
+            digit *= -1;
+        digit += '0';
 		if (digit != nb[len])
-		{
-			write(1, "Error\n", 6);
-			exit(EXIT_FAILURE);
-		}
+            error_exit();
 		nbr /= 10;
 		len--;
 		if (nb[len] == '-' || nb[len] == '+')
