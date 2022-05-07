@@ -60,16 +60,16 @@ void	get_steps(struct node *node, struct steps *steps)
 
 void	smart_rotate(struct node **head, struct var *var, char stack)
 {
-	if (var->steps_min.next <= var->steps_min.prev && var->steps_min.next <= var->steps_max.next && \
-	var->steps_min.next <= var->steps_max.prev)
+	if (var->steps_min.next <= var->steps_min.prev && var->steps_min.next <= var->steps_max.next \
+	&& var->steps_min.next <= var->steps_max.prev)
 		while (*head != var->min)
 			rrab(head, stack);
-	else if (var->steps_min.prev <= var->steps_min.next && var->steps_min.prev <= var->steps_max.next && \
-	var->steps_min.prev <= var->steps_max.prev)
+	else if (var->steps_min.prev <= var->steps_min.next && var->steps_min.prev <= var->steps_max.next \
+	&& var->steps_min.prev <= var->steps_max.prev)
 		while (*head != var->min)
 			rab(head, stack);
-	else if (var->steps_max.next <= var->steps_max.prev && var->steps_max.next <= var->steps_min.next && \
-	var->steps_max.next <= var->steps_min.prev)
+	else if (var->steps_max.next <= var->steps_max.prev && var->steps_max.next <= var->steps_min.next \
+	&& var->steps_max.next <= var->steps_min.prev)
 		while (*head != var->max)
 			rrab(head, stack);
 	else
