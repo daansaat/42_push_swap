@@ -27,7 +27,7 @@ void	pab(struct node **head_from, struct node **head_to);
 void	rab(struct node **head);
 void	rrab(struct node **head);
 
-void	big_sort(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var);
+void	sort_big(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var);
 
 void	get_min_max_num(struct node **head, struct var *var);
 void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var *var);

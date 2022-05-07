@@ -61,14 +61,14 @@ static void	sort_and_partition(int argc, char **argv, int *partition)
 
 	sort_args_into_array(argc, argv, a);
 	partition[0] = a[0];
-	partition[1] = a[(argc - 1) / 5];
-	partition[2] = a[(argc - 1) / 5 * 2];
-	partition[3] = a[(argc - 1) / 5 * 3];
-	partition[4] = a[(argc - 1) / 5 * 4];
-	partition[5] = a[argc - 2];
+	partition[1] = a[(argc - 2) / 5 * 1];
+	partition[2] = a[(argc - 2) / 5 * 2];
+	partition[3] = a[(argc - 2) / 5 * 3];
+	partition[4] = a[(argc - 2) / 5 * 4];
+	partition[5] = a[(argc - 2) / 5 * 5];
 }
 
-void	big_sort(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var)
+void	sort_big(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var)
 {
 	int			partition[6];
 	int			x;

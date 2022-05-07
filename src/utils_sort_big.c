@@ -14,14 +14,12 @@ void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var 
 			if (temp->nb < ub && temp->nb >= lb)
 				var->max = temp;
 	}
-	if (temp->nb < ub && temp->nb >= lb)
-		var->min = temp;
-	while (temp->prev)
+	while (temp)
 	{
-		temp = temp->prev;
 		if (!var->min)
 			if (temp->nb < ub && temp->nb >= lb)
 				var->min = temp;
+		temp = temp->prev;
 	}
 }
 
