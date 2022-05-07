@@ -50,8 +50,8 @@ int	main(int argc, char **argv)
 		exit (EXIT_FAILURE);
 	check_is_number(argv);
 	create_dll(&head_a, argv);
-	check_is_sorted(head_a);
 	check_is_double(head_a);
+	check_is_sorted(head_a);
 	if (argc >= 5)
 		check_malloc(var = malloc(sizeof(struct var)));
 	if (argc == 3)

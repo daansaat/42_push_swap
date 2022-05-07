@@ -5,7 +5,7 @@
 
 static void error_exit(void)
 {
-    write(1, "Error\n", 6);
+    ft_putstr_fd("Error\n", 1);
     exit(EXIT_FAILURE);
 }
 
@@ -82,5 +82,6 @@ void    check_is_sorted(struct node *head)
             return ;
         head = head->next;
     }
+    ft_putstr_fd("Already sorted\n", 1);
     exit(EXIT_SUCCESS);
 }

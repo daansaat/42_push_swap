@@ -28,9 +28,6 @@ void    sort_3(struct node **head_a)
         sab(head_a, 'a');
         rab(head_a, 'a');
     }
-    else if ((*head_a)->nb < (*head_a)->next->nb \
-    && (*head_a)->next->nb < (*head_a)->next->next->nb)
-        return ;
     else
         rrab(head_a, 'a');
 }

@@ -65,7 +65,7 @@ static void	sort_and_partition(int argc, char **argv, int *partition)
 	partition[2] = a[(argc - 2) / 5 * 2];
 	partition[3] = a[(argc - 2) / 5 * 3];
 	partition[4] = a[(argc - 2) / 5 * 4];
-	partition[5] = a[(argc - 2) / 5 * 5];
+	partition[5] = a[(argc - 2)];
 }
 
 void	sort_big(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var)
