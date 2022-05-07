@@ -2,10 +2,11 @@ NAME = push_swap
 SRCS_DIR = src/
 SRCS_LIST = \
 	actions.c \
+	parse_input.c \
 	push_swap.c \
 	sort_big.c \
 	sort_small.c \
-	utils_sort.c \
+	sort_utils.c \
 	print_list.c
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS = $(SRCS:.c=.o)

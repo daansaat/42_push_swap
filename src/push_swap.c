@@ -3,7 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	check_malloc(void *ptr)
+static void	check_malloc(void *ptr)
 {
 	if (ptr == NULL)
 		exit(EXIT_FAILURE);
@@ -18,6 +18,7 @@ static void	create_dll(struct node **head, char **argv)
 	i = 1;
 	while (argv[i])
 	{
+		check_is_integer(argv[i]);
 		check_malloc(newnode = malloc(sizeof(struct node)));
 		if (*head == 0)
 		{
@@ -35,7 +36,6 @@ static void	create_dll(struct node **head, char **argv)
 		i++;
 	}
 	newnode->next = NULL;
-	(*head)->prev = NULL;
 }
 
 int	main(int argc, char **argv)
@@ -46,11 +46,14 @@ int	main(int argc, char **argv)
 
 	head_a = NULL;
 	head_b = NULL;
+	if (argc <= 2)
+		exit (EXIT_FAILURE);
+	check_is_number(argv);
 	create_dll(&head_a, argv);
+	check_is_sorted(head_a);
+	check_is_double(head_a);
 	if (argc >= 5)
 		check_malloc(var = malloc(sizeof(struct var)));
-	if (argc < 2)
-		exit (EXIT_SUCCESS);
 	if (argc == 3)
 		sort_2(&head_a);
 	else if (argc == 4)
