@@ -37,7 +37,6 @@ void    sort_3(struct node **head_a)
 
 void    sort_4_5(struct node **head_a, struct node **head_b, struct var *var, int argc)
 {
-	(void) argc;
     get_min_max_num(head_a, var);
 	var->saved_min = var->min;
     get_steps(var->min, &var->steps_min);
