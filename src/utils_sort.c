@@ -58,23 +58,23 @@ void	get_steps(struct node *node, struct steps *steps)
 	}
 }
 
-void	smart_rotate(struct node **head, struct var *var)
+void	smart_rotate(struct node **head, struct var *var, char stack)
 {
 	if (var->steps_min.next <= var->steps_min.prev && var->steps_min.next <= var->steps_max.next && \
-		var->steps_min.next <= var->steps_max.prev)
+	var->steps_min.next <= var->steps_max.prev)
 		while (*head != var->min)
-			rrab(head);
+			rrab(head, stack);
 	else if (var->steps_min.prev <= var->steps_min.next && var->steps_min.prev <= var->steps_max.next && \
-		var->steps_min.prev <= var->steps_max.prev)
+	var->steps_min.prev <= var->steps_max.prev)
 		while (*head != var->min)
-			rab(head);
+			rab(head, stack);
 	else if (var->steps_max.next <= var->steps_max.prev && var->steps_max.next <= var->steps_min.next && \
-		var->steps_max.next <= var->steps_min.prev)
+	var->steps_max.next <= var->steps_min.prev)
 		while (*head != var->max)
-			rrab(head);
+			rrab(head, stack);
 	else
 		while (*head != var->max)
-			rab(head);
+			rab(head, stack);
 }
 
 void	smart_rotate_saved_min(struct node **head, struct var *var)
@@ -82,8 +82,8 @@ void	smart_rotate_saved_min(struct node **head, struct var *var)
 	while (*head != var->saved_min)
 	{
 		if (var->steps_min.next <= var->steps_min.prev)
-			rrab(head);
+			rrab(head, 'a');
 		else
-			rab(head);
+			rab(head, 'a');
 	}
 }

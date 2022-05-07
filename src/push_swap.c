@@ -9,15 +9,6 @@ void	check_malloc(void *ptr)
 		exit(EXIT_FAILURE);
 }
 
-// void	check_is_integer(int nb)
-// {
-// 	if (nb > 2147483647 || nb < -2147483648 || !nb)
-// 	{
-// 		write(1, "ERROR\n", 6);
-// 		exit(EXIT_FAILURE);
-// 	}
-// }
-
 static void	create_dll(struct node **head, char **argv)
 {
 	struct node	*newnode;
@@ -56,8 +47,18 @@ int	main(int argc, char **argv)
 	head_a = NULL;
 	head_b = NULL;
 	create_dll(&head_a, argv);
-	check_malloc(var = malloc(sizeof(struct var)));
-	sort_big(argc, argv, &head_a, &head_b, var);
-	// print_list(head_a, head_b);
+	if (argc >= 5)
+		check_malloc(var = malloc(sizeof(struct var)));
+	if (argc < 2)
+		exit (EXIT_SUCCESS);
+	if (argc == 3)
+		sort_2(&head_a);
+	else if (argc == 4)
+		sort_3(&head_a);
+	else if (argc == 5 || argc == 6)
+		sort_4_5(&head_a, &head_b, var, argc);
+	else
+		sort_big(argc, argv, &head_a, &head_b, var);
+	print_list(head_a, head_b);
 	return (0);
 }

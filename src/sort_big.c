@@ -9,10 +9,10 @@ static void	insert_sort_back(struct node **head_b, struct node **head_a, struct 
 		var->saved_min = var->min;
 	get_steps(var->min, &var->steps_min);
 	get_steps(var->max, &var->steps_max);
-	smart_rotate(head_b, var);	
-	pab(head_b, head_a);
+	smart_rotate(head_b, var, 'b');	
+	pab(head_b, head_a, 'a');
 	if (*head_a == var->min && *head_a != var->max)
-		rab(head_a);
+		rab(head_a, 'a');
 }
 
 static int	select_next_partition_member(int ub, int lb, struct node **head_a, struct var *var)
@@ -24,7 +24,7 @@ static int	select_next_partition_member(int ub, int lb, struct node **head_a, st
 		return (0);
 	get_steps(var->max, &var->steps_max);
 	get_steps(var->min, &var->steps_min);
-	smart_rotate(head_a, var);
+	smart_rotate(head_a, var, 'a');
 	return (1);
 }
 
@@ -79,7 +79,7 @@ void	sort_big(int argc, char **argv, struct node **head_a, struct node **head_b,
 	while (x > 0)
 	{
 		while (select_next_partition_member(partition[x], partition[x - 1], head_a, var))
-			pab(head_a, head_b);
+			pab(head_a, head_b, 'b');
 		if (var->saved_min)
 		{
 			get_steps(var->saved_min, &var->steps_min);

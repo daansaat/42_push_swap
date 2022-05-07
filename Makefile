@@ -3,10 +3,9 @@ SRCS_DIR = src/
 SRCS_LIST = \
 	actions.c \
 	push_swap.c \
-	sort_3.c \
-	sort_5.c \
 	sort_big.c \
-	utils_sort_big.c \
+	sort_small.c \
+	utils_sort.c \
 	print_list.c
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS = $(SRCS:.c=.o)
