@@ -55,11 +55,8 @@ static void	sort_args_into_array(int argc, char **argv, int *a)
 	}
 }
 
-static void	sort_and_partition(int argc, char **argv, int *partition)
+static void	partition_args(int argc, int *partition, int *a)
 {
-	int	a[argc - 1];
-
-	sort_args_into_array(argc, argv, a);
 	partition[0] = a[0];
 	partition[1] = a[(argc - 2) / 5 * 1];
 	partition[2] = a[(argc - 2) / 5 * 2];
@@ -70,10 +67,12 @@ static void	sort_and_partition(int argc, char **argv, int *partition)
 
 void	sort_big(int argc, char **argv, struct node **head_a, struct node **head_b, struct var *var)
 {
-	int			partition[6];
-	int			x;
+	int	a[argc - 1];
+	int	partition[6];
+	int	x;
 
-	sort_and_partition(argc, argv, partition);
+	sort_args_into_array(argc, argv, a);
+	partition_args(argc, partition, a);
 	var->saved_min = NULL;
 	x = 5;
 	while (x > 0)
