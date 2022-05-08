@@ -40,7 +40,7 @@ void	smart_rotate(struct node **head, struct var *var, char stack);
 void	smart_rotate_saved_min(struct node **head, struct var *var);
 
 void    check_is_number(char **argv);
-void    check_is_integer(char *nb);
+void    check_is_integer(char **argv);
 void    check_is_sorted(struct node *head);
 void    check_is_double(struct node *head);
 //

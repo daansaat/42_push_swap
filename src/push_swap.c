@@ -18,7 +18,6 @@ static void	create_dll(struct node **head, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		check_is_integer(argv[i]);
 		check_malloc(newnode = malloc(sizeof(struct node)));
 		if (*head == 0)
 		{
@@ -49,6 +48,7 @@ int	main(int argc, char **argv)
 	if (argc <= 2)
 		exit (EXIT_FAILURE);
 	check_is_number(argv);
+	check_is_integer(argv);
 	create_dll(&head_a, argv);
 	check_is_double(head_a);
 	check_is_sorted(head_a);

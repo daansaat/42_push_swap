@@ -51,27 +51,33 @@ void    check_is_double(struct node *head)
     } 
 }
 
-void    check_is_integer(char *nb)
+void    check_is_integer(char **argv)
 {
 	char	digit;
     int		nbr;
 	int		len;
+    int     i;
 
-    nbr = ft_atoi(nb);
-    len = ft_strlen(nb) - 1;
-	while (len >= 0)
-	{
-		digit = nbr % 10;
-        if (digit < 0 && nb[0] == '-')
-            digit *= -1;
-        digit += '0';
-		if (digit != nb[len])
-            error_exit();
-		nbr /= 10;
-		len--;
-		if (nb[len] == '-' || nb[len] == '+')
-			break;
-	}
+    i = 1;
+	while (argv[i])
+    {
+        nbr = ft_atoi(argv[i]);
+        len = ft_strlen(argv[i]) - 1;
+        while (len >= 0)
+        {
+            digit = nbr % 10;
+            if (digit < 0 && argv[i][0] == '-')
+                digit *= -1;
+            digit += '0';
+            if (digit != argv[i][len])
+                error_exit();
+            nbr /= 10;
+            len--;
+            if (argv[i][len] == '-' || argv[i][len] == '+')
+                break;
+        }
+        i++;
+    }
 }
 
 void    check_is_sorted(struct node *head)
