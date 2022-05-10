@@ -5,7 +5,7 @@
 
 static void	check_malloc(void *ptr)
 {
-	if (ptr == NULL)
+	if (!ptr)
 		exit(EXIT_FAILURE);
 }
 

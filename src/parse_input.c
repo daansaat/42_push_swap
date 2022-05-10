@@ -5,7 +5,7 @@
 
 static void error_exit(void)
 {
-    ft_putstr_fd("Error\n", 1);
+    ft_putstr_fd("Error\n", 2);
     exit(EXIT_FAILURE);
 }
 
@@ -18,7 +18,7 @@ void    check_is_number(char **argv)
     j = 0;
     while (argv[i])
     {
-        if (argv[i][j] == '-' || argv[i][j] == '+')
+        if (argv[i][j] == '-')// || argv[i][j] == '+')
             j++;
         while (argv[i][j])
         {
@@ -73,7 +73,7 @@ void    check_is_integer(char **argv)
                 error_exit();
             nbr /= 10;
             len--;
-            if (argv[i][len] == '-' || argv[i][len] == '+')
+            if (argv[i][len] == '-')// || argv[i][len] == '+')
                 break;
         }
         i++;
