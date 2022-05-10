@@ -20,7 +20,7 @@ INC = -I ./inc -I ./libft
 LIB = -L ./libft -l ft
 
 all: $(NAME)
-	@make graphic
+	@echo "$(GREEN) run with ./push_swap [random set of integers]$(RESET)" 
 
 $(NAME): libft/libft.a $(OBJS) 
 	@echo "$(PURPLE) compiling push_swap $(RESET)"
@@ -44,13 +44,3 @@ fclean: clean
 	rm -f libft/libft.a
 
 re: clean fclean all
-
-graphic:
-	@echo "$(GREEN)  ________  ___  ___  ________  ___  ___           ________  ___       __   ________  ________    "
-	@echo "$(GREEN) |\   __  \|\  \|\  \|\   ____\|\  \|\  \         |\   ____\|\  \     |\  \|\   __  \|\   __  \   "
-	@echo "$(GREEN) \ \  \|\  \ \  \\\  \ \  \___|\ \ \   \\\   \        \ \  \___|\ \  \    \ \  \ \  \|\  \ \  \|\  \  "
-	@echo "$(GREEN)  \ \   ____\ \  \\\  \ \_____  \ \ \  __   \        \ \_____  \ \  \  __\ \  \ \   __  \ \   ____\ "
-	@echo "$(GREEN)   \ \  \___|\ \  \\\  \|____|\  \ \ \ \ \   \        \|____|\  \ \  \|\__\_\  \ \  \ \  \ \  \___| "
-	@echo "$(GREEN)    \ \__\    \ \_______\____\_\  \ \_\ \__ \           ____\_\  \ \____________\ \__\ \__\ \__\    "
-	@echo "$(GREEN)     \|__|     \|_______|\_________\|__|\|__|          |\_________\|____________|\|__|\|__|\|__|    "
-	@echo "$(GREEN)                        \|_________|                   \|_________|    $(RESET)\n"
