@@ -11,8 +11,7 @@ SRCS_LIST = \
 	push_swap.c \
 	sort_big.c \
 	sort_small.c \
-	sort_utils.c \
-	print_list.c
+	sort_utils.c
 SRCS = $(addprefix $(SRCS_DIR), $(SRCS_LIST))
 OBJS = $(SRCS:.c=.o)
 FLAGS = -Wall -Werror -Wextra
@@ -20,7 +19,6 @@ INC = -I ./inc -I ./libft
 LIB = -L ./libft -l ft
 
 all: $(NAME)
-	@echo "$(GREEN) run with ./push_swap [random set of integers]$(RESET)" 
 
 $(NAME): libft/libft.a $(OBJS) 
 	@echo "$(PURPLE) compiling push_swap $(RESET)"

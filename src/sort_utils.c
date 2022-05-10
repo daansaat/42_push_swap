@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   sort_utils.c                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/05/10 12:02:06 by dsaat         #+#    #+#                 */
+/*   Updated: 2022/05/10 15:20:15 by dsaat         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var *var)
+void	get_next_from_top_bottom(int ub, int lb, t_node **head, t_var *var)
 {
-	struct node	*temp;
-	
+	t_node	*temp;
+
 	temp = *head;
 	if (temp->nb < ub && temp->nb >= lb)
 		var->max = temp;
@@ -23,11 +35,13 @@ void    get_next_from_top_bottom(int ub, int lb, struct node **head, struct var 
 	}
 }
 
-void	get_min_max_num(struct node **head, struct var *var)
+void	get_min_max_num(t_node **head, t_var *var)
 {
-	struct node	*temp;
+	t_node	*temp;
 
-	var->max = var->min = temp = *head;
+	var->max = *head;
+	var->min = *head;
+	temp = *head;
 	while (temp->next)
 	{
 		temp = temp->next;
@@ -38,9 +52,9 @@ void	get_min_max_num(struct node **head, struct var *var)
 	}
 }
 
-void	get_steps(struct node *node, struct steps *steps)
+void	get_steps(t_node *node, t_steps *steps)
 {
-	struct node	*temp;
+	t_node	*temp;
 
 	temp = node;
 	steps->next = 0;
@@ -58,18 +72,18 @@ void	get_steps(struct node *node, struct steps *steps)
 	}
 }
 
-void	smart_rotate(struct node **head, struct var *var, char stack)
+void	smart_rotate(t_node **head, t_var *var, char stack)
 {
-	if (var->steps_min.next <= var->steps_min.prev && var->steps_min.next <= var->steps_max.next \
-	&& var->steps_min.next <= var->steps_max.prev)
+	if (var->steps_min.next <= var->steps_min.prev && var->steps_min.next \
+	<= var->steps_max.next && var->steps_min.next <= var->steps_max.prev)
 		while (*head != var->min)
 			rrab(head, stack);
-	else if (var->steps_min.prev <= var->steps_min.next && var->steps_min.prev <= var->steps_max.next \
-	&& var->steps_min.prev <= var->steps_max.prev)
+	else if (var->steps_min.prev <= var->steps_min.next && var->steps_min.prev \
+	<= var->steps_max.next && var->steps_min.prev <= var->steps_max.prev)
 		while (*head != var->min)
 			rab(head, stack);
-	else if (var->steps_max.next <= var->steps_max.prev && var->steps_max.next <= var->steps_min.next \
-	&& var->steps_max.next <= var->steps_min.prev)
+	else if (var->steps_max.next <= var->steps_max.prev && var->steps_max.next \
+	<= var->steps_min.next && var->steps_max.next <= var->steps_min.prev)
 		while (*head != var->max)
 			rrab(head, stack);
 	else
@@ -77,7 +91,7 @@ void	smart_rotate(struct node **head, struct var *var, char stack)
 			rab(head, stack);
 }
 
-void	smart_rotate_saved_min(struct node **head, struct var *var)
+void	smart_rotate_saved_min(t_node **head, t_var *var)
 {
 	while (*head != var->saved_min)
 	{

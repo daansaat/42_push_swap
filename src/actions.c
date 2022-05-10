@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   actions.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/05/10 12:01:48 by dsaat         #+#    #+#                 */
+/*   Updated: 2022/05/10 14:55:31 by dsaat         ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdlib.h>
 #include <unistd.h>
 
-void	sab(struct node **head, char stack)
+void	sab(t_node **head, char stack)
 {
 	int	temp;
 
@@ -17,9 +29,9 @@ void	sab(struct node **head, char stack)
 		write(1, "sb\n", 3);
 }
 
-void	pab(struct node **head_from, struct node **head_to, char stack)
+void	pab(t_node **head_from, t_node **head_to, char stack)
 {
-	struct node	*temp;
+	t_node	*temp;
 
 	if (!*head_from)
 		return ;
@@ -41,9 +53,9 @@ void	pab(struct node **head_from, struct node **head_to, char stack)
 		write(1, "pb\n", 3);
 }
 
-void	rab(struct node **head, char stack)
+void	rab(t_node **head, char stack)
 {
-	struct node	*temp;
+	t_node	*temp;
 
 	temp = *head;
 	while (temp->next)
@@ -59,9 +71,9 @@ void	rab(struct node **head, char stack)
 		write(1, "rb\n", 3);
 }
 
-void	rrab(struct node **head, char stack)
+void	rrab(t_node **head, char stack)
 {
-	struct node	*temp;
+	t_node	*temp;
 
 	temp = *head;
 	while (temp->next)
