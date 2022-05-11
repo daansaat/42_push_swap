@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:54 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/11 12:44:23 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/11 17:22:04 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ static void	parse_input(char **argv, t_node **head_a)
 	check_is_number_integer(argv);
 	create_dll(head_a, argv);
 	check_is_double(*head_a);
-	if (check_is_sorted(*head_a))
-		exit(EXIT_SUCCESS);
+	check_is_sorted(*head_a);
 }
 
 int	main(int argc, char **argv)

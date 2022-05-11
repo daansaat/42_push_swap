@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:51 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/11 17:18:06 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/11 17:21:48 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,12 @@ void	check_is_double(t_node *head)
 	}
 }
 
-int	check_is_sorted(t_node *head)
+void	check_is_sorted(t_node *head)
 {
 	while (head->next)
 	{
 		if (head->next->nb < head->nb)
-			return (0);
+			error_exit();
 		head = head->next;
 	}
-	return (1);
 }
