@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:51 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/10 14:56:25 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/11 17:18:06 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,18 @@ static void	error_exit(void)
 {
 	ft_putstr_fd("Error\n", 2);
 	exit(EXIT_FAILURE);
+}
+
+static int	check_plus_min(char **argv, int i, int j)
+{
+	if (argv[i][j] == '-' || argv[i][j] == '+')
+	{
+		if (argv[i][j - 1] && (argv[i][j - 1] == '-' || argv[i][j - 1] == '+'))
+			error_exit();
+		else
+			return (1);
+	}
+	return (0);
 }
 
 void	check_is_number_integer(char **argv)
@@ -39,11 +51,11 @@ void	check_is_number_integer(char **argv)
 			if (digit < 0 && argv[i][0] == '-')
 				digit *= -1;
 			digit += '0';
-			if (digit != argv[i][j] || argv[i][j] < '0' || argv[i][j] > '9')
+			if (digit != argv[i][j])
 				error_exit();
 			nbr /= 10;
 			j--;
-			if (argv[i][j] == '-')
+			if (check_plus_min(argv, i, j))
 				break ;
 		}
 		i++;
@@ -70,14 +82,13 @@ void	check_is_double(t_node *head)
 	}
 }
 
-void	check_is_sorted(t_node *head)
+int	check_is_sorted(t_node *head)
 {
 	while (head->next)
 	{
 		if (head->next->nb < head->nb)
-			return ;
+			return (0);
 		head = head->next;
 	}
-	ft_putstr_fd("Already sorted\n", 1);
-	exit(EXIT_SUCCESS);
+	return (1);
 }

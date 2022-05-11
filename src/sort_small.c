@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:59 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/10 15:18:01 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/11 13:06:41 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ void	sort_3(t_node **head_a)
 		sab(head_a, 'a');
 		rab(head_a, 'a');
 	}
-	else
+	else if ((*head_a)->nb < (*head_a)->next->nb \
+	&& (*head_a)->next->nb > (*head_a)->next->next->nb \
+	&& (*head_a)->nb > (*head_a)->next->next->nb)
 		rrab(head_a, 'a');
 }
 
