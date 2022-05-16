@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:51 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/16 10:46:07 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/16 13:19:27 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void	check_is_sorted(t_node *head)
 			return ;
 		head = head->next;
 	}
+	exit(EXIT_SUCCESS);
 }
