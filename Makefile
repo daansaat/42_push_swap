@@ -23,7 +23,6 @@ all: $(NAME)
 $(NAME): libft/libft.a $(OBJS) 
 	@echo "$(PURPLE) compiling push_swap $(RESET)"
 	$(CC) $(FLAGS) $(INC) $(LIB) $(SRCS) -o $(NAME)
-	@echo "$(RESET)"
 
 %.o: %.c
 	$(CC) -c $(INC) $< -o $@
@@ -31,7 +30,6 @@ $(NAME): libft/libft.a $(OBJS)
 libft/libft.a:
 	@echo "$(YELLOW) compiling libft $(RESET)"
 	$(MAKE) -C ./libft bonus
-	@echo ""
 
 clean:
 	rm -f $(OBJS)
