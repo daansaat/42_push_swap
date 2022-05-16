@@ -6,7 +6,7 @@
 /*   By: dsaat <dsaat@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/05/10 12:01:51 by dsaat         #+#    #+#                 */
-/*   Updated: 2022/05/11 17:26:40 by dsaat         ########   odam.nl         */
+/*   Updated: 2022/05/16 10:46:07 by dsaat         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	check_plus_min(char **argv, int i, int j)
 {
 	if (argv[i][j] == '-' || argv[i][j] == '+')
 	{
-		if (argv[i][j - 1] && (argv[i][j - 1] == '-' || argv[i][j - 1] == '+'))
+		if (argv[i][j - 1])
 			error_exit();
 		else
 			return (1);
